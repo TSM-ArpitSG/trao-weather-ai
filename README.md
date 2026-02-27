@@ -360,7 +360,7 @@ Add screenshots under a `screenshots/` folder and reference them here.
 
 1. **Login Page**
 
-   ![Login page](./screenshots/login.png)
+   ![Login page](./screenshots/Login.png)
    > Shows the neon login screen with badge “Trao Weather AI · Multi-city dashboard with AI insights”.
 
 2. **Register Page**
