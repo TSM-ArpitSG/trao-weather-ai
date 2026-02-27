@@ -15,6 +15,23 @@ A short walkthrough video of Trao Weather AI is available here:
 
 ---
 
+## Table of Contents
+
+- [1. Project Overview](#1-project-overview)
+- [2. Tech Stack](#2-tech-stack)
+- [3. High-Level Architecture](#3-high-level-architecture)
+- [4. Project Structure](#4-project-structure)
+- [5. Backend Details (Node + Express)](#5-backend-details-node--express)
+- [6. Frontend Details (Next.js + Tailwind)](#6-frontend-details-nextjs--tailwind)
+- [7. Environment Configuration](#7-environment-configuration)
+- [8. Local Development](#8-local-development)
+- [9. Deployment](#9-deployment)
+- [10. Screenshots](#10-screenshots-to-be-added)
+- [11. How This Meets the Assessment Requirements](#11-how-this-meets-the-assessment-requirements)
+- [12. Credits](#12-credits)
+
+---
+
 ## 1. Project Overview
 
 Trao Weather AI is a full‑stack application that lets each user:
@@ -343,33 +360,32 @@ Add screenshots under a `screenshots/` folder and reference them here.
 
 1. **Login Page**
 
-   > _Screenshot path suggestion:_  
-   > `screenshots/Login.png`  
+   ![Login page](./screenshots/login.png)
    > Shows the neon login screen with badge “Trao Weather AI · Multi-city dashboard with AI insights”.
 
 2. **Register Page**
 
-   > `screenshots/register.png`  
+   ![Register page](./screenshots/Register.png)  
    > Registration flow with form validation.
 
 3. **Dashboard – Cities and Favorites**
 
-   > `screenshots/dashboard-cities.png`  
+   ![Dashboard – Cities and Favorites](./screenshots/dashboard-cities.png)  
    > Main dashboard listing multiple cities and favorites.
 
 4. **Dashboard – Add City Errors**
 
-   > `screenshots/dashboard-add-city-error.png`  
+   ![Dashboard – Add City Errors](./screenshots/dashboard-add-city-error.png)  
    > Add‑city section showing styled red banner for duplicate / invalid city.
 
 5. **Dashboard – Weather Cards**
 
-   > `screenshots/dashboard-weather-cards.png`  
+   ![Dashboard – Weather Cards](./screenshots/dashboard-weather-cards.png)  
    > City cards with temperatures, conditions, and “Refresh / Favorite / Remove” actions.
 
 6. **Dashboard – AI Assistant**
 
-   > `screenshots/dashboard-ai-widget.png`  
+   ![Dashboard – AI Assistant](./screenshots/dashboard-ai-widget.png)  
    > Floating AI chat widget open with a sample answer.
 
 Update this section with actual file paths once screenshots are added.
