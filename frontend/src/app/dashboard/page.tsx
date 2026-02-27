@@ -51,6 +51,24 @@ export default function DashboardPage() {
   const [showAssistantLabel, setShowAssistantLabel] = useState(true);
   const [assistantLabelDismissed, setAssistantLabelDismissed] = useState(false);
 
+  const prettyError = (msg: string) => {
+    const lower = msg.toLowerCase();
+
+    if (lower.includes("already") && lower.includes("exist")) {
+      return "You already have this city saved in your dashboard.";
+    }
+
+    if (lower.includes("city not found") || lower.includes("failed to resolve")) {
+      return "We couldn't find live weather for this city. Try checking the spelling or country code.";
+    }
+
+    if (lower.includes("openweather")) {
+      return "We couldn't load weather for this city right now. It may not be supported or temporarily unavailable.";
+    }
+
+    return msg;
+  };
+
   // Clear auth information from localStorage and redirect to login
   const performLogout = () => {
     if (typeof window !== "undefined") {
@@ -330,7 +348,10 @@ export default function DashboardPage() {
             <p className="text-[11px] text-slate-500">Cities are saved to your account only.</p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-3">
+          <form
+            onSubmit={handleAddCity}
+            className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-3"
+          >
             <div className="flex-1 space-y-2">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
                 <input
@@ -376,7 +397,6 @@ export default function DashboardPage() {
                 </div>
               </div>
             </div>
-
             <button
               type="submit"
               disabled={addingCity}
@@ -384,7 +404,14 @@ export default function DashboardPage() {
             >
               {addingCity ? "Adding..." : "Add city"}
             </button>
-          </div>
+          </form>
+
+          {error && (
+            <div className="mt-2 inline-flex items-center gap-2 rounded-md border border-red-500/50 bg-red-500/10 px-3 py-1.5 text-[11px] text-red-200 shadow-[0_0_15px_rgba(248,113,113,0.4)]">
+              <span className="text-xs">⚠️</span>
+              <span>{prettyError(error)}</span>
+            </div>
+          )}
         </section>
 
         <section className="bg-slate-900/70 border border-slate-800 rounded-xl p-4 sm:p-6 space-y-3 transition-transform transition-shadow hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(15,23,42,0.9)]">
@@ -497,7 +524,9 @@ export default function DashboardPage() {
                       </div>
 
                       {wError && (
-                        <p className="mt-2 text-xs text-amber-400">{wError}</p>
+                        <p className="mt-2 rounded-md border border-amber-400/40 bg-amber-500/10 px-2 py-1 text-[11px] text-amber-100">
+                          {prettyError(wError)}
+                        </p>
                       )}
 
                       <div className="mt-auto flex items-center justify-between gap-2 pt-2 text-xs">
