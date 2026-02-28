@@ -11,7 +11,7 @@ Repository: **https://github.com/TSM-ArpitSG/trao-weather-ai**
 
 A short walkthrough video of Trao Weather AI is available here:
 
-**Video link:** _[Add Google Drive / Loom URL here]_
+**Video link:** https://drive.google.com/file/d/1sJS_cGftL6fJQ1A6lFVLOw49DOGITZva/view?usp=sharing
 
 ---
 
@@ -80,7 +80,7 @@ It is built and structured like a production app, not a quick demo:
 
 ---
 
-## 3. High‑Level Architecture
+## 3. High-Level Architecture
 
 ```text
 Frontend (Next.js, Vercel)
@@ -381,6 +381,7 @@ Add screenshots under a `screenshots/` folder and reference them here.
 5. **Dashboard – Weather Cards**
 
    ![Dashboard – Weather Cards](./screenshots/dashboard-weather-cards.png)  
+   ![Dashboard – Remove Cards](./screenshots/Hello.png)  
    > City cards with temperatures, conditions, and “Refresh / Favorite / Remove” actions.
 
 6. **Dashboard – AI Assistant**
